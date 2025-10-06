@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ZenoApp: App {
+    @AppStorage("showStatusBar") var showStatusBar: Bool = true
     var body: some Scene {
-        WindowGroup {
+        MenuBarExtra("Zeno", image: .zenoLogo, isInserted: $showStatusBar) {
             ContentView()
-        }
+        }.menuBarExtraStyle(.window)
     }
 }
